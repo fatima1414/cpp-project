@@ -91,24 +91,62 @@
 
 // SUM OF 2D  ARRAY
 
-// #include <iostream>
-// using namespace std;
+// QUESTON 4
 
-// int main()
-// {
-//     int sum = 0;
-//     int arr[2][4] = {{10, 20, 30, 40},
-//                      {50, 60, 70, 80}};
+#include <iostream>
+using namespace std;
 
-//     for (int i = 0; i < 2; i++)
-//     {
-//         for (int j = 0; j < 4; j++)
-//         {
-//             sum += arr[i][j];
-//             cout << "Current sum: " << sum << endl;
-//         }
-//     }
+int main() {
+    int rows, cols;
 
-//     cout << "Total sum: " << sum << endl;
-//     return 0;
-// }
+   
+    cout << "Enter the array's row size: ";
+    cin >> rows;
+    cout << "Enter the array's column size: ";
+    cin >> cols;
+
+    int arr[rows][cols];
+
+   
+    cout << "Enter array's elements:\n";
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            cout << "a[" << i << "][" << j << "] = ";
+            cin >> arr[i][j];
+        }
+    }
+
+   
+    int rowNum;
+    cout << "\nEnter row number: ";
+    cin >> rowNum;
+
+    if (rowNum >= 0 && rowNum < rows) {
+        int rowSum = 0;
+        cout << "Elements of row " << rowNum << ": ";
+        for (int j = 0; j < cols; j++) {
+            cout << arr[rowNum][j] << " ";
+            rowSum += arr[rowNum][j];
+        }
+        cout << "\nThe sum of row " << rowNum << ": " << rowSum << endl;
+    } else {
+        cout << "Invalid row number!\n";
+    }
+
+   
+    int colNum;
+    cout << "\nEnter column number: ";
+    cin >> colNum;
+
+    if (colNum >= 0 && colNum < cols) {
+        int colSum = 0;
+        cout << "Elements of column " << colNum << ": ";
+        for (int i = 0; i < rows; i++) {
+            cout << arr[i][colNum] << " ";
+            colSum += arr[i][colNum];
+        }
+        cout << "\nThe sum of column " << colNum << ": " << colSum << endl;
+    } else {
+        cout << "Invalid column number!\n";
+    }
+}
