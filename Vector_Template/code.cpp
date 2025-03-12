@@ -4,12 +4,8 @@
 
 using namespace std;
 
-
-
+// Template class for student details
 template <typename T>
-
-
-
 class MemoryCalculate {
 private:
     T id;
@@ -29,8 +25,6 @@ public:
         return id;
     }
 };
-
-
 
 // Student Management System
 template <typename T>
@@ -81,9 +75,6 @@ public:
     }
 };
 
-
-
-
 int main() {
     StudentManagement<int> management;
     int choice, id;
@@ -99,32 +90,26 @@ int main() {
         cout << "Enter your choice: ";
         cin >> choice;
 
-        switch (choice) {
-            case 1:
-                cout << "Enter Student ID and Name: ";
-                cin >> id;
-                cin.ignore();
-                getline(cin, name);
-                management.addStudent(id, name);
-                break;
-            case 2:
-                management.displayAll();
-                break;
-            case 3:
-                cout << "Enter Student ID to Remove: ";
-                cin >> id;
-                management.removeStudentById(id);
-                break;
-            case 4:
-                cout << "Enter Student ID to Search: ";
-                cin >> id;
-                management.searchStudentById(id);
-                break;
-            case 5:
-                cout << "Exiting...\n";
-                break;
-            default:
-                cout << "Invalid choice! Try again.\n";
+        if (choice == 1) {
+            cout << "Enter Student ID and Name: ";
+            cin >> id;
+            cin.ignore();
+            getline(cin, name);
+            management.addStudent(id, name);
+        } else if (choice == 2) {
+            management.displayAll();
+        } else if (choice == 3) {
+            cout << "Enter Student ID to Remove: ";
+            cin >> id;
+            management.removeStudentById(id);
+        } else if (choice == 4) {
+            cout << "Enter Student ID to Search: ";
+            cin >> id;
+            management.searchStudentById(id);
+        } else if (choice == 5) {
+            cout << "Exiting...\n";
+        } else {
+            cout << "Invalid choice! Try again.\n";
         }
     } while (choice != 5);
 
