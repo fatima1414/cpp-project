@@ -203,9 +203,9 @@
 //     while (originalNum != 0) {
 //         // remainder contains the last digit
 //         remainder = originalNum % 10;
-        
+
 //         result += remainder * remainder * remainder;
-        
+
 //         // removing last digit from the original number
 //         originalNum /= 10;
 //     }
@@ -220,6 +220,8 @@
 
 
 // 10  Magic number
+// 28 → 2 + 8 = 10  10 → 1 + 0 = 1 ✅ (Magic Number)
+// 777 → 7 + 7 + 7 = 21  21 → 2 + 1 = 3 ❌ (Not a Magic Number)
 // #include <iostream>
 // using namespace std;
 // int isMagicNumber(int n) {
@@ -247,34 +249,30 @@
 // #include <iostream>
 // using namespace std;
 
-// int main() {
+// int main()
+// {
+//     int num;
+//     cout << "Enter number:";
+//     cin >> num;
 
-//   int i, n;
-//   bool is_prime = true;
-
-//   cout << "Enter a positive integer: ";
-//   cin >> n;
-
-//   // 0 and 1 are not prime numbers
-//   if (n == 0 || n == 1) {
-//     is_prime = false;
-//   }
-
-//   // loop to check if n is prime
-//   for (i = 2; i <= n/2; ++i) {
-//     if (n % i == 0) {
-//       is_prime = false;
-//       break;
+//     int count = 0;
+//     for (int i = 1; i <= num; i++)
+//     {
+//         if (num % i == 0)
+//         {
+//             count++;
+//         }
 //     }
-//   }
-
-//   if (is_prime)
-//     cout << n << " is a prime number";
-//   else
-//     cout << n << " is not a prime number";+
-
-//   return 0;
+//     if (count == 2)
+//     {
+//         cout << "prime num" << endl;
+//     }
+//     else
+//     {
+//         cout << "not prime!" << endl;
+//     }
 // }
+
 
 // 12 find the factorial of a number
 // #include <iostream>
@@ -282,7 +280,9 @@
 
 // int main() {
 //   int number, factorial=1 ;
+//   cout<<"enter the number :";
 //   cin >> number;
+
 //   for (int i = number; i >= 1 ; i--)
 //   {
 //     factorial = factorial * i;
@@ -295,48 +295,366 @@
 // #include <iostream>
 // using namespace std;
 
-
-// void fibonacci(int n) {
+// void fibonacci(int n)
+// {
 //     int a = 0, b = 1, nextTerm;
 
 //     cout << "Fibonacci Series up to " << n << " terms: ";
 
-//     for (int i = 1; i <= n; i++) {
+//     for (int i = 1; i <= n; i++)
+//     {
 //         cout << a << " ";
-//         nextTerm = a + b;  // Compute next term
-//         a = b;             // Move first term to second
-//         b = nextTerm;      // Move second term to next
+//         nextTerm = a + b; // Compute next term
+//         a = b;            // Move first term to second
+//         b = nextTerm;     // Move second term to next
 //     }
 //     cout << endl;
 // }
 
-// int main() {
+// int main()
+// {
 //     int n;
 //     cout << "Enter the number of terms: ";
 //     cin >> n;
 
-//     if (n <= 0) {
+//     if (n <= 0)
+//     {
 //         cout << "Please enter a positive number." << endl;
-//     } else {
+//     }
+//     else
+//     {
 //         fibonacci(n);
 //     }
 
 //     return 0;
 // }
 
-// 14  write a table 
+
+// 14  write a table
+// #include <iostream>
+// using namespace std;
+
+// int main()
+// {
+//     int num;
+//     cout << "Enter a number: ";
+//     cin >> num;
+
+//     for (int i = 1; i <= 10; i++)
+//     {
+//         cout << num << " * " << i << " = " << num * i << "  ";
+//     }
+//     cout << endl;
+
+//     return 0;
+// }
+
+
+
+//  16. WAP to find sum of all array values and find Average of array
+
+// The sum of the array values (10 + 20 + 30 + 40 + 50) is 150.
+// The average of the array values (150 ÷ 5) is 30.
+
 // #include <iostream>
 // using namespace std;
 
 // int main() {
-//     int num;
-//     cout << "Enter a number: ";
-//     cin >> num;
+//     // Define the array and its size
+//     int arr[] = {10, 20, 30, 40, 50};
+//     int size = sizeof(arr) / sizeof(arr[0]);
     
-//     for (int i = 1; i <= 10; i++) {
-//         cout << num << " * " << i << " = " << num * i << "  ";
+//     // Initialize sum variable
+//     int sum = 0;
+
+//     // Calculate the sum of the array elements
+//     for (int i = 0; i < size; i++) {
+//         sum += arr[i];
+//     }
+
+//     // Calculate the average
+//     double average = static_cast<double>(sum) / size;
+
+//     // Output the results
+//     cout << "Sum of all array values: " << sum << endl;
+//     cout << "Average of array values: " << average << endl;
+
+//     return 0;
+// }
+
+
+// 17. WAP to find maximum and minimum values in Array
+
+// #include <iostream>
+// using namespace std;
+
+// int main() {
+//     // Define the array
+//     int arr[] = {10, 20, 30, 40, 50};
+//     int size = sizeof(arr) / sizeof(arr[0]);
+    
+//     // Initialize variables for max and min
+//     int max_val = arr[0];
+//     int min_val = arr[0];
+
+//     // Loop through the array to find max and min values
+//     for (int i = 1; i < size; i++) {
+//         if (arr[i] > max_val) {
+//             max_val = arr[i];  // Update max value if current element is larger
+//         }
+//         if (arr[i] < min_val) {
+//             min_val = arr[i];  // Update min value if current element is smaller
+//         }
+//     }
+
+//     // Output the results
+//     cout << "Maximum value in the array: " << max_val << endl;
+//     cout << "Minimum value in the array: " << min_val << endl;
+
+//     return 0;
+// }
+
+
+// 18.  WAP to make Reverse array of given array
+
+// #include <iostream>
+// using namespace std;
+
+// int main() {
+//     // Define the array
+//     int arr[] = {10, 20, 30, 40, 50};
+//     int size = sizeof(arr) / sizeof(arr[0]);
+
+//     // Print the original array
+//     cout << "Original array: ";
+//     for (int i = 0; i < size; i++) {
+//         cout << arr[i] << " ";
 //     }
 //     cout << endl;
+
+//     // Reverse the array
+//     for (int i = 0; i < size / 2; i++) {
+//         // Swap the elements
+//         int temp = arr[i];
+//         arr[i] = arr[size - 1 - i];
+//         arr[size - 1 - i] = temp;
+//     }
+
+//     // Print the reversed array
+//     cout << "Reversed array: ";
+//     for (int i = 0; i < size; i++) {
+//         cout << arr[i] << " ";
+//     }
+//     cout << endl;
+
+//     return 0;
+// }
+
+
+// 19. WAP to check Array is Palindrome or not
+
+// Enter the size of the array: 5
+// Enter the elements of the array: 10 20 30 20 10
+// The array is a palindrome.
+
+// #include <iostream>
+// using namespace std;
+
+// int main() {
+//     int size;
+    
+//     // Ask user for the size of the array
+//     cout << "Enter the size of the array: ";
+//     cin >> size;
+    
+//     // Declare an array based on the size
+//     int arr[size];
+    
+//     // Input array elements from the user
+//     cout << "Enter the elements of the array: ";
+//     for (int i = 0; i < size; i++) {
+//         cin >> arr[i];
+//     }
+    
+//     // Check if the array is a palindrome
+//     bool isPalindrome = true;
+//     for (int i = 0; i < size / 2; i++) {
+//         if (arr[i] != arr[size - 1 - i]) {
+//             isPalindrome = false;  // If any pair doesn't match, it's not a palindrome
+//             break;
+//         }
+//     }
+
+//     // Output the result
+//     if (isPalindrome) {
+//         cout << "The array is a palindrome." << endl;
+//     } else {
+//         cout << "The array is not a palindrome." << endl;
+//     }
+
+//     return 0;
+// }
+
+
+// 20. WAP to sort the array in ascending order and descending order using bubble sort.
+
+
+
+// 21. WAP to insert one element on particular position in given array 
+
+// Enter the size of the array: 4
+// Enter the elements of the array: 5 10 15 20
+// Enter the position to insert the element (0 to 4): 0
+// Enter the element to insert: 3
+
+// postion=index as same
+
+// #include <iostream>
+// using namespace std;
+
+// int main() {
+//     int size, pos, element;
+
+//     // Ask the user for the size of the array
+//     cout << "Enter the size of the array: ";
+//     cin >> size;
+
+//     // Declare the array with the given size
+//     int arr[size + 1];  // +1 to accommodate the new element
+
+//     // Ask the user to input the elements of the array
+//     cout << "Enter the elements of the array: ";
+//     for (int i = 0; i < size; i++) {
+//         cin >> arr[i];
+//     }
+
+//     // Ask the user for the position and element to insert
+//     cout << "Enter the position to insert the element (0 to " << size << "): ";
+//     cin >> pos;
+//     cout << "Enter the element to insert: ";
+//     cin >> element;
+
+//     // Shift elements to the right to make space for the new element
+//     for (int i = size; i > pos; i--) {
+//         arr[i] = arr[i - 1];
+//     }
+
+//     // Insert the element at the specified position
+//     arr[pos] = element;
+
+//     // Output the updated array
+//     cout << "Array after insertion: ";
+//     for (int i = 0; i <= size; i++) {
+//         cout << arr[i] << " ";
+//     }
+//     cout << endl;
+
+//     return 0;
+// }
+
+
+// 22. WAP to delete one element in given array using position and Values 
+
+// position,index= 0 1 2 3
+
+// #include <iostream>
+// using namespace std;
+
+// int main() {
+//     int size = 5;  // Original size of the array
+//     int arr[] = {10, 20, 30, 40, 50};  // The array
+
+//     int pos = 2;  // We want to delete the element at position 2
+
+//     // Shift elements to the left to fill the space of the deleted element
+//     for (int i = pos; i < size - 1; i++) {
+//         arr[i] = arr[i + 1];  // Move each element one position to the left
+//     }
+//     size--;  // Decrease the size of the array
+
+//     // Print the updated array
+//     cout << "Updated array: ";
+//     for (int i = 0; i < size; i++) {
+//         cout << arr[i] << " ";  // Print the updated array
+//     }
+//     cout << endl;
+
+//     return 0;
+// }
+
+
+// value = koy 10 20 30 40 koy pn lai sako
+// #include <iostream>
+// using namespace std;
+
+// int main() {
+//     int size = 5;  // Original size of the array
+//     int arr[] = {10, 20, 30, 40, 50};  // The array
+
+//     int value = 30;  // We want to delete the value 30
+//     bool found = false;
+
+//     // Search for the value in the array
+//     for (int i = 0; i < size; i++) {
+//         if (arr[i] == value) {  // If we find the value
+//             // Shift elements to the left to remove the value
+//             for (int j = i; j < size - 1; j++) {
+//                 arr[j] = arr[j + 1];  // Move each element one position to the left
+//             }
+//             size--;  // Decrease the size of the array
+//             found = true;
+//             break;  // Exit the loop once the element is deleted
+//         }
+//     }
+
+//     if (found) {
+//         // Print the updated array
+//         cout << "Updated array: ";
+//         for (int i = 0; i < size; i++) {
+//             cout << arr[i] << " ";  // Print the updated array
+//         }
+//         cout << endl;
+//     } else {
+//         cout << "Value not found in the array!" << endl;  // If the value is not found
+//     }
+
+//     return 0;
+// }
+
+// 23.  WAP to find unique values in given array
+
+// 1 2 2  3 4 4 5
+// its unique values
+// 1 3 5 
+// #include <iostream>
+// #include <unordered_map>
+// using namespace std;
+
+// void findUniqueNumbers(int arr[], int n) {
+//     unordered_map<int, int> countMap;  // To store the count of each element
+
+//     // Count the frequency of each element in the array
+//     for(int i = 0; i < n; i++) {
+//         countMap[arr[i]]++;
+//     }
+
+//     // Find elements that appear only once and print them
+//     cout << "Unique values in the array: ";
+//     for(auto& entry : countMap) {
+//         if(entry.second == 1) {
+//             cout << entry.first << " ";  // If the element appears once, print it
+//         }
+//     }
+//     cout << endl;
+// }
+
+// int main() {
+//     // Input array and its size
+//     int arr[] = {1, 2, 2, 3, 4, 5, 5, 6};
+//     int n = sizeof(arr) / sizeof(arr[0]);  // Calculate the size of the array
+    
+//     // Call the function to find unique numbers
+//     findUniqueNumbers(arr, n);
     
 //     return 0;
 // }
