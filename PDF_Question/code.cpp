@@ -48,10 +48,14 @@
 //     int totalPaisa, rupees, paisa;
 //     cout << "Enter Total Paisa : ";
 //     cin >> totalPaisa;
-//     // rupees = totalPaisa / 100;
+
+//     rupees = totalPaisa / 100;
+    
 //     paisa = totalPaisa % 100;
 //     cout << "Total Paisa = " << totalPaisa << endl;
 //     cout << "Converted Paisa in Rs = " << rupees << "." << paisa << endl;
+//     // cout << "rupees in Rs = " << rupees <<endl;
+//     // cout << "paise in Rs = " << paisa <<endl;
 //     return 0;
 // }
 
@@ -85,29 +89,30 @@
 // }
 
 // 5 Print sum of first and last digit of given number
-#include<iostream>
+// #include<iostream>
 
-using namespace std;
-int main()
-{
-   int num, temp=0, last, rem, sum=0;
-   cout<<"Enter a Number: ";
-   cin>>num;
-   while(num!=0)
-   {
-      if(temp==0)
-      {
-         last = num%10;
-         temp++;
-      }
-      rem = num%10;
-      num = num/10;
-   }
-   sum = rem + last;
-   cout<<"\nSum of First ("<<rem<<") and Last ("<<last<<") Digit = "<<sum;
-   cout<<endl;
-   return 0;
-}
+// using namespace std;
+// int main()
+// {
+//    int num, temp=0, last, rem, sum=0;
+//    cout<<"Enter a Number: ";
+//    cin>>num;
+//    while(num!=0)
+//    {
+//       if(temp==0)
+//       {
+//          last = num%10;
+//          temp++;
+//       }
+//       rem = num%10;
+//     //   cout<<rem<<endl;
+//       num = num/10;
+//    }
+//    sum = rem + last;
+//    cout<<"\nSum of First ("<<rem<<") and Last ("<<last<<") Digit = "<<sum;
+//    cout<<endl;
+//    return 0;
+// }
 
 // 6 to print sum of middle of digits of given number
 // #include <iostream>
@@ -161,34 +166,34 @@ int main()
 // }
 
 // 8 Number is Palindrome or Not
-// #include <iostream>
-// using namespace std;
+#include <iostream>
+using namespace std;
 
-// int main()
-// {
-//      int n, num, digit, rev = 0;
+int main()
+{
+     int n, num, digit, rev = 0;
 
-//      cout << "Enter a positive number: ";
-//      cin >> num;
+     cout << "Enter a positive number: ";
+     cin >> num;
 
-//      n = num;
+     n = num;
 
-//      do
-//      {
-//          digit = num % 10;
-//          rev = (rev * 10) + digit;
-//          num = num / 10;
-//      } while (num != 0);
+     do
+     {
+         digit = num % 10;
+         rev = (rev * 10) + digit;
+         num = num / 10;
+     } while (num != 0);
 
-//      cout << " The reverse of the number is: " << rev << endl;
+     cout << " The reverse of the number is: " << rev << endl;
 
-//      if (n == rev and n > 0)  // Negative numbers are not palindromic
-//          cout << " The number is a palindrome.";
-//      else
-//          cout << " The number is not a palindrome.";
+     if (n == rev and n > 0)  // Negative numbers are not palindromic
+         cout << " The number is a palindrome.";
+     else
+         cout << " The number is not a palindrome.";
 
-//     return 0;
-// }
+    return 0;
+}
 
 // 9 Armstrong Number
 // #include <iostream>
